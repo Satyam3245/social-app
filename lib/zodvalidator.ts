@@ -6,5 +6,10 @@ export const userSchema = z.object({
     bio : z.string().optional(),
     username : z.string(),
     image : z.string().optional(),
-    dateOfBirth : z.date()
-})
+    dateOfBirth : z.string()
+});
+
+export const postSchema = z.object({
+    about : z.string(),
+    image : z.string()
+});
