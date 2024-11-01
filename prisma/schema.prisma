@@ -21,5 +21,15 @@ model User{
   dateofBirth DateTime
   bio String?
   image String?
+  createdAt DateTime @default(now())
+  posts Posts[]
 }
-// created at add a field to the User model
+
+model Posts{
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  about String?
+  image String
+  authorId String
+  user User @relation(fields: [authorId],references: [id])
+}
